@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Интересные коты</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Главное меню">
+      <a class="logo" href="index.html">КотоМир</a>
+      <ul class="nav-list">
+        <li><a class="nav-link active" href="index.html">Главная</a></li>
+        <li><a class="nav-link" href="cat1.html">Ориентальная</a></li>
+        <li><a class="nav-link" href="cat2.html">Манчкин</a></li>
+        <li><a class="nav-link" href="cat3.html">Мейн-кун</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Маленький сайт о больших характерах</p>
+        <h1>Интересные породы кошек</h1>
+        <p>
+          Кошки живут рядом с человеком тысячи лет, но каждая порода до сих пор
+          умеет удивлять: внешностью, привычками, голосом и своим особым способом
+          просить внимания.
+        </p>
+        <a class="button" href="#breeds">Смотреть породы</a>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="about-title">
+      <div class="section-heading">
+        <p class="eyebrow">О кошках</p>
+        <h2 id="about-title">Почему они такие разные</h2>
+      </div>
+      <p class="wide-text">
+        Породы кошек отличаются не только размером и шерстью. У одних звонкий
+        голос и сильная привязанность к человеку, другие спокойнее и величественнее,
+        третьи выглядят необычно из-за коротких лап или огромного пушистого хвоста.
+        На этом сайте собраны три яркие породы: ориентальная кошка, манчкин и
+        мейн-кун.
+      </p>
+    </section>
+
+    <section class="content-section" id="breeds" aria-labelledby="breeds-title">
+      <div class="section-heading">
+        <p class="eyebrow">Породы</p>
+        <h2 id="breeds-title">Выберите страницу</h2>
+      </div>
+      <div class="card-grid">
+        <article class="breed-card">
+          <img src="res/cat1.png" alt="Ориентальная кошка">
+          <div class="card-body">
+            <h3>Ориентальная кошка</h3>
+            <p>Грациозная, общительная и очень разговорчивая порода.</p>
+            <a class="card-link" href="cat1.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="breed-card">
+          <img src="res/cat2.png" alt="Манчкин">
+          <div class="card-body">
+            <h3>Манчкин</h3>
+            <p>Кошка с короткими лапами, живым характером и любопытством.</p>
+            <a class="card-link" href="cat2.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="breed-card">
+          <img src="res/cat3.png" alt="Мейн-кун">
+          <div class="card-body">
+            <h3>Мейн-кун</h3>
+            <p>Крупная пушистая кошка с мягким нравом и уверенным видом.</p>
+            <a class="card-link" href="cat3.html">Подробнее</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>КотоМир - простой сайт о породах кошек.</p>
+  </footer>
+</body>
+</html>
