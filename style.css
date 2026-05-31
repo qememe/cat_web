@@ -1,352 +1,412 @@
+/* Применяет правила ко всем элементам страницы. */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Считает ширину элемента вместе с padding и border. */
 }
 
+/* Настраивает поведение всей HTML-страницы. */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Делает прокрутку к якорям плавной. */
 }
 
+/* Задает основные стили для всего сайта. */
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  color: #24302f;
-  background: #f7f4ee;
+  margin: 0; /* Убирает стандартные отступы браузера вокруг страницы. */
+  font-family: Arial, Helvetica, sans-serif; /* Задает основной шрифт текста. */
+  line-height: 1.6; /* Увеличивает расстояние между строками для читаемости. */
+  color: #24302f; /* Задает основной цвет текста. */
+  background: #f7f4ee; /* Задает светлый фон страницы. */
 }
 
+/* Настраивает все изображения на сайте. */
 img {
-  display: block;
-  max-width: 100%;
+  display: block; /* Убирает лишний нижний зазор у изображений. */
+  max-width: 100%; /* Не дает изображению быть шире родительского блока. */
 }
 
+/* Настраивает все ссылки на сайте. */
 a {
-  color: inherit;
+  color: inherit; /* Ссылка наследует цвет текста от родителя. */
 }
 
+/* Оформляет верхнюю шапку сайта. */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: #fffdf8;
-  border-bottom: 1px solid #e7dfd0;
+  position: sticky; /* Закрепляет шапку при прокрутке. */
+  top: 0; /* Прилипание происходит к верхнему краю окна. */
+  z-index: 10; /* Поднимает шапку выше обычных элементов. */
+  background: #fffdf8; /* Задает светлый фон шапки. */
+  border-bottom: 1px solid #e7dfd0; /* Добавляет нижнюю разделительную линию. */
 }
 
+/* Раскладывает логотип и меню внутри шапки. */
 .nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  width: min(1120px, calc(100% - 32px));
-  margin: 0 auto;
-  padding: 14px 0;
+  display: flex; /* Включает flex-раскладку для элементов навигации. */
+  align-items: center; /* Выравнивает элементы по вертикальному центру. */
+  justify-content: space-between; /* Разносит логотип и меню по краям. */
+  gap: 24px; /* Добавляет расстояние между элементами навигации. */
+  width: min(1120px, calc(100% - 32px)); /* Ограничивает ширину и оставляет поля по бокам. */
+  margin: 0 auto; /* Центрирует навигацию по горизонтали. */
+  padding: 14px 0; /* Добавляет вертикальные внутренние отступы. */
 }
 
+/* Оформляет ссылку-логотип. */
 .logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: #305f57;
-  text-decoration: none;
-  white-space: nowrap;
+  font-size: 24px; /* Делает текст логотипа крупнее. */
+  font-weight: 700; /* Делает логотип жирным. */
+  color: #305f57; /* Задает зеленый цвет логотипа. */
+  text-decoration: none; /* Убирает подчеркивание ссылки. */
+  white-space: nowrap; /* Запрещает перенос логотипа на новую строку. */
 }
 
+/* Оформляет список пунктов меню. */
 .nav-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  display: flex; /* Располагает пункты меню в строку. */
+  flex-wrap: wrap; /* Разрешает перенос пунктов меню на новую строку. */
+  justify-content: flex-end; /* Прижимает пункты меню к правому краю. */
+  gap: 8px; /* Добавляет расстояние между пунктами меню. */
+  margin: 0; /* Убирает внешний отступ списка. */
+  padding: 0; /* Убирает внутренний отступ списка. */
+  list-style: none; /* Убирает маркеры списка. */
 }
 
+/* Общие стили для ссылок меню, кнопок и ссылок в карточках. */
 .nav-link,
 .button,
 .card-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  display: inline-flex; /* Позволяет центрировать содержимое внутри ссылки или кнопки. */
+  align-items: center; /* Центрирует текст по вертикали. */
+  justify-content: center; /* Центрирует текст по горизонтали. */
+  min-height: 40px; /* Задает минимальную высоту интерактивного элемента. */
+  border-radius: 8px; /* Скругляет углы. */
+  text-decoration: none; /* Убирает подчеркивание у ссылок. */
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease; /* Плавно меняет сдвиг, фон и цвет. */
 }
 
+/* Оформляет отдельную ссылку меню. */
 .nav-link {
-  padding: 8px 12px;
-  color: #41504d;
+  padding: 8px 12px; /* Добавляет внутренние отступы вокруг текста. */
+  color: #41504d; /* Задает обычный цвет ссылки меню. */
 }
 
+/* Меняет ссылку меню при наведении мыши и фокусе с клавиатуры. */
 .nav-link:hover,
 .nav-link:focus-visible {
-  color: #ffffff;
-  background: #3c746a;
+  color: #ffffff; /* Делает текст белым. */
+  background: #3c746a; /* Задает зеленый фон. */
 }
 
+/* Показывает нажатие на интерактивные элементы. */
 .nav-link:active,
 .button:active,
 .card-link:active {
-  transform: translateY(2px);
+  transform: translateY(2px); /* Сдвигает элемент вниз на 2 пикселя при нажатии. */
 }
 
+/* Оформляет активную ссылку текущей страницы. */
 .nav-link.active {
-  color: #ffffff;
-  background: #305f57;
+  color: #ffffff; /* Делает текст активной ссылки белым. */
+  background: #305f57; /* Задает темно-зеленый фон активной ссылки. */
 }
 
+/* Оформляет главный экран на главной странице. */
 .hero {
-  min-height: 430px;
-  display: grid;
-  align-items: center;
-  background:
-    linear-gradient(90deg, rgba(36, 48, 47, 0.86), rgba(36, 48, 47, 0.28)),
-    url("res/cat3.png") center 28% / cover;
-  color: #ffffff;
+  min-height: 430px; /* Задает минимальную высоту блока hero. */
+  display: grid; /* Включает grid-раскладку для удобного выравнивания. */
+  align-items: center; /* Выравнивает содержимое hero по центру вертикально. */
+  background: /* Задает затемнение поверх фоновой картинки. */
+    linear-gradient(90deg, rgba(36, 48, 47, 0.86), rgba(36, 48, 47, 0.28)), /* Добавляет темный градиент слева направо. */
+    url("res/cat3.png") center 28% / cover; /* Ставит картинку кота фоном и растягивает ее на весь блок. */
+  color: #ffffff; /* Делает текст внутри hero белым. */
 }
 
+/* Ограничивает и позиционирует текст внутри hero. */
 .hero-text {
-  width: min(1120px, calc(100% - 32px));
-  margin: 0 auto;
-  padding: 72px 0;
+  width: min(1120px, calc(100% - 32px)); /* Ограничивает ширину текста и оставляет поля по бокам. */
+  margin: 0 auto; /* Центрирует текстовый контейнер. */
+  padding: 72px 0; /* Добавляет вертикальные отступы внутри hero. */
 }
 
+/* Общие стили для крупных заголовков. */
 .hero-text h1,
 .breed-hero h1,
 .not-found h1 {
-  max-width: 720px;
-  margin: 0 0 16px;
-  font-size: clamp(36px, 6vw, 64px);
-  line-height: 1.08;
+  max-width: 720px; /* Ограничивает ширину заголовка. */
+  margin: 0 0 16px; /* Убирает верхний отступ и добавляет нижний. */
+  font-size: clamp(36px, 6vw, 64px); /* Делает размер заголовка адаптивным. */
+  line-height: 1.08; /* Уменьшает межстрочный интервал для крупного текста. */
 }
 
+/* Оформляет абзац внутри hero. */
 .hero-text p {
-  max-width: 640px;
-  font-size: 18px;
+  max-width: 640px; /* Ограничивает ширину текста. */
+  font-size: 18px; /* Делает текст немного крупнее обычного. */
 }
 
+/* Оформляет маленькую надпись над заголовком. */
 .eyebrow {
-  margin: 0 0 8px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: uppercase;
-  color: #3c746a;
+  margin: 0 0 8px; /* Убирает верхний отступ и добавляет небольшой нижний. */
+  font-size: 13px; /* Делает текст маленьким. */
+  font-weight: 700; /* Делает текст жирным. */
+  letter-spacing: 0; /* Не добавляет расстояние между буквами. */
+  text-transform: uppercase; /* Переводит текст в верхний регистр. */
+  color: #3c746a; /* Задает зеленый цвет. */
 }
 
+/* Меняет цвет маленькой надписи внутри hero. */
 .hero .eyebrow {
-  color: #f0d58a;
+  color: #f0d58a; /* Делает надпись желтой на темном фоне. */
 }
 
+/* Оформляет основную кнопку. */
 .button {
-  margin-top: 16px;
-  padding: 10px 18px;
-  color: #ffffff;
-  background: #c4563f;
-  font-weight: 700;
+  margin-top: 16px; /* Добавляет отступ сверху перед кнопкой. */
+  padding: 10px 18px; /* Добавляет внутренние отступы кнопки. */
+  color: #ffffff; /* Делает текст кнопки белым. */
+  background: #c4563f; /* Задает красно-оранжевый фон кнопки. */
+  font-weight: 700; /* Делает текст кнопки жирным. */
 }
 
+/* Меняет кнопку при наведении мыши и фокусе с клавиатуры. */
 .button:hover,
 .button:focus-visible {
-  background: #9e3e2c;
+  background: #9e3e2c; /* Затемняет фон кнопки. */
 }
 
+/* Общая ширина для основных контейнеров страниц. */
 .content-section,
 .breed-page,
 .not-found {
-  width: min(1120px, calc(100% - 32px));
-  margin: 0 auto;
+  width: min(1120px, calc(100% - 32px)); /* Ограничивает ширину контента и оставляет поля по бокам. */
+  margin: 0 auto; /* Центрирует контейнер. */
 }
 
+/* Оформляет обычную секцию контента. */
 .content-section {
-  padding: 56px 0;
+  padding: 56px 0; /* Добавляет вертикальные отступы секции. */
 }
 
+/* Оформляет блок с заголовком секции. */
 .section-heading {
-  max-width: 720px;
-  margin-bottom: 22px;
+  max-width: 720px; /* Ограничивает ширину заголовочного блока. */
+  margin-bottom: 22px; /* Добавляет отступ снизу. */
 }
 
+/* Оформляет заголовки второго уровня. */
 h2 {
-  margin: 0 0 16px;
-  font-size: clamp(26px, 4vw, 40px);
-  line-height: 1.2;
-  color: #1f3e39;
+  margin: 0 0 16px; /* Убирает верхний отступ и добавляет нижний. */
+  font-size: clamp(26px, 4vw, 40px); /* Делает размер h2 адаптивным. */
+  line-height: 1.2; /* Задает компактный межстрочный интервал. */
+  color: #1f3e39; /* Задает темно-зеленый цвет заголовка. */
 }
 
+/* Оформляет заголовки третьего уровня. */
 h3 {
-  margin: 0 0 8px;
-  font-size: 22px;
-  color: #1f3e39;
+  margin: 0 0 8px; /* Убирает верхний отступ и добавляет нижний. */
+  font-size: 22px; /* Задает размер h3. */
+  color: #1f3e39; /* Задает темно-зеленый цвет h3. */
 }
 
+/* Оформляет все абзацы. */
 p {
-  margin: 0 0 14px;
+  margin: 0 0 14px; /* Убирает верхний отступ и добавляет нижний. */
 }
 
+/* Оформляет широкий текстовый блок. */
 .wide-text {
-  max-width: 860px;
-  font-size: 18px;
+  max-width: 860px; /* Ограничивает ширину длинного текста. */
+  font-size: 18px; /* Делает текст немного крупнее обычного. */
 }
 
+/* Создает сетку карточек пород. */
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  display: grid; /* Включает CSS Grid. */
+  grid-template-columns: repeat(3, 1fr); /* Делит сетку на три равные колонки. */
+  gap: 20px; /* Добавляет расстояние между карточками. */
 }
 
+/* Оформляет карточку породы. */
 .breed-card {
-  overflow: hidden;
-  background: #fffdf8;
-  border: 1px solid #e7dfd0;
-  border-radius: 8px;
-  box-shadow: 0 12px 28px rgba(36, 48, 47, 0.08);
+  overflow: hidden; /* Обрезает содержимое, выходящее за скругленные углы. */
+  background: #fffdf8; /* Задает светлый фон карточки. */
+  border: 1px solid #e7dfd0; /* Добавляет тонкую рамку карточки. */
+  border-radius: 8px; /* Скругляет углы карточки. */
+  box-shadow: 0 12px 28px rgba(36, 48, 47, 0.08); /* Добавляет мягкую тень. */
 }
 
+/* Настраивает изображение внутри карточки породы. */
 .breed-card img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  width: 100%; /* Растягивает изображение на всю ширину карточки. */
+  aspect-ratio: 4 / 3; /* Держит пропорции изображения 4 к 3. */
+  object-fit: cover; /* Обрезает изображение так, чтобы оно заполнило область. */
 }
 
+/* Оформляет текстовую часть карточки. */
 .card-body {
-  padding: 18px;
+  padding: 18px; /* Добавляет внутренние отступы в карточке. */
 }
 
+/* Оформляет ссылку-кнопку внутри карточки. */
 .card-link {
-  margin-top: 6px;
-  padding: 9px 14px;
-  color: #ffffff;
-  background: #3c746a;
-  font-weight: 700;
+  margin-top: 6px; /* Добавляет небольшой отступ сверху. */
+  padding: 9px 14px; /* Добавляет внутренние отступы ссылки. */
+  color: #ffffff; /* Делает текст белым. */
+  background: #3c746a; /* Задает зеленый фон. */
+  font-weight: 700; /* Делает текст жирным. */
 }
 
+/* Меняет ссылку карточки при наведении и фокусе. */
 .card-link:hover,
 .card-link:focus-visible {
-  background: #c4563f;
+  background: #c4563f; /* Меняет фон на красно-оранжевый. */
 }
 
+/* Оформляет страницу отдельной породы. */
 .breed-page {
-  padding: 42px 0 12px;
+  padding: 42px 0 12px; /* Добавляет верхний, боковые и нижний отступы. */
 }
 
+/* Раскладывает текст и картинку на странице породы. */
 .breed-hero {
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  align-items: center;
-  gap: 32px;
-  padding: 28px 0 36px;
+  display: grid; /* Включает grid-раскладку. */
+  grid-template-columns: 1fr 420px; /* Делает текстовую колонку гибкой, а картинку шириной 420px. */
+  align-items: center; /* Выравнивает колонки по вертикальному центру. */
+  gap: 32px; /* Добавляет расстояние между текстом и картинкой. */
+  padding: 28px 0 36px; /* Добавляет вертикальные отступы блока. */
 }
 
+/* Оформляет абзацы в hero-блоке страницы породы. */
 .breed-hero p {
-  max-width: 680px;
-  font-size: 18px;
+  max-width: 680px; /* Ограничивает ширину текста. */
+  font-size: 18px; /* Делает текст немного крупнее обычного. */
 }
 
+/* Оформляет изображение на странице породы. */
 .breed-hero img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 16px 34px rgba(36, 48, 47, 0.14);
+  width: 100%; /* Растягивает изображение на ширину своей колонки. */
+  aspect-ratio: 4 / 3; /* Держит пропорции 4 к 3. */
+  object-fit: cover; /* Обрезает изображение для заполнения области. */
+  border-radius: 8px; /* Скругляет углы изображения. */
+  box-shadow: 0 16px 34px rgba(36, 48, 47, 0.14); /* Добавляет тень изображению. */
 }
 
+/* Оформляет секцию со списком фактов. */
 .fact-list {
-  padding: 0 0 56px;
+  padding: 0 0 56px; /* Добавляет нижний отступ секции фактов. */
 }
 
+/* Оформляет список фактов. */
 .fact-list ul {
-  display: grid;
-  gap: 12px;
-  max-width: 820px;
-  margin: 0;
-  padding-left: 22px;
+  display: grid; /* Раскладывает пункты списка через grid. */
+  gap: 12px; /* Добавляет расстояние между пунктами списка. */
+  max-width: 820px; /* Ограничивает ширину списка. */
+  margin: 0; /* Убирает внешний отступ списка. */
+  padding-left: 22px; /* Оставляет место слева для маркеров списка. */
 }
 
+/* Меняет цвет маркеров списка фактов. */
 .fact-list li::marker {
-  color: #c4563f;
+  color: #c4563f; /* Делает маркеры красно-оранжевыми. */
 }
 
+/* Оформляет страницу ошибки 404. */
 .not-found {
-  min-height: 62vh;
-  display: grid;
-  align-items: center;
+  min-height: 62vh; /* Делает блок высотой минимум 62% от высоты окна. */
+  display: grid; /* Включает grid для выравнивания содержимого. */
+  align-items: center; /* Центрирует содержимое по вертикали. */
 }
 
+/* Оформляет подвал сайта. */
 .site-footer {
-  padding: 28px 16px;
-  text-align: center;
-  color: #ffffff;
-  background: #24302f;
+  padding: 28px 16px; /* Добавляет внутренние отступы подвала. */
+  text-align: center; /* Центрирует текст в подвале. */
+  color: #ffffff; /* Делает текст белым. */
+  background: #24302f; /* Задает темный фон подвала. */
 }
 
+/* Убирает лишний отступ у абзаца в подвале. */
 .site-footer p {
-  margin: 0;
+  margin: 0; /* Убирает отступы абзаца. */
 }
 
+/* Меняет ссылки в подвале при наведении и фокусе. */
 .site-footer a:hover,
 .site-footer a:focus-visible {
-  color: #f0d58a;
+  color: #f0d58a; /* Делает ссылку желтой. */
 }
 
+/* Адаптирует сайт для экранов шириной до 820px. */
 @media (max-width: 820px) {
+  /* Перестраивает навигацию на средних экранах. */
   .nav {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
+    align-items: flex-start; /* Прижимает элементы навигации к левому краю. */
+    flex-direction: column; /* Располагает логотип и меню в колонку. */
+    gap: 12px; /* Уменьшает расстояние между логотипом и меню. */
   }
 
+  /* Меняет выравнивание списка меню на средних экранах. */
   .nav-list {
-    justify-content: flex-start;
+    justify-content: flex-start; /* Прижимает пункты меню к левому краю. */
   }
 
+  /* Уменьшает hero-блок на средних экранах. */
   .hero {
-    min-height: 380px;
+    min-height: 380px; /* Делает минимальную высоту hero меньше. */
   }
 
+  /* Переводит сетки в одну колонку на средних экранах. */
   .card-grid,
   .breed-hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Делает одну колонку вместо нескольких. */
   }
 
+  /* Ограничивает ширину картинки породы на средних экранах. */
   .breed-hero img {
-    max-width: 560px;
+    max-width: 560px; /* Не дает картинке стать слишком широкой. */
   }
 }
 
+/* Адаптирует сайт для маленьких экранов шириной до 520px. */
 @media (max-width: 520px) {
+  /* Уменьшает боковые поля основных контейнеров на телефонах. */
   .nav,
   .content-section,
   .breed-page,
   .not-found,
   .hero-text {
-    width: min(1120px, calc(100% - 24px));
+    width: min(1120px, calc(100% - 24px)); /* Оставляет по 12px свободного места с каждой стороны. */
   }
 
+  /* Уменьшает ссылки меню на телефонах. */
   .nav-link {
-    min-height: 36px;
-    padding: 7px 10px;
-    font-size: 14px;
+    min-height: 36px; /* Делает минимальную высоту ссылки меньше. */
+    padding: 7px 10px; /* Уменьшает внутренние отступы ссылки. */
+    font-size: 14px; /* Уменьшает размер текста ссылки. */
   }
 
+  /* Настраивает hero-блок для телефонов. */
   .hero {
-    min-height: 360px;
-    background-position: center;
+    min-height: 360px; /* Делает hero еще немного ниже. */
+    background-position: center; /* Центрирует фоновую картинку. */
   }
 
+  /* Уменьшает отступы текста hero на телефонах. */
   .hero-text {
-    padding: 48px 0;
+    padding: 48px 0; /* Уменьшает вертикальные отступы. */
   }
 
+  /* Уменьшает крупный текст на телефонах. */
   .hero-text p,
   .wide-text,
   .breed-hero p {
-    font-size: 16px;
+    font-size: 16px; /* Делает текст удобным для маленького экрана. */
   }
 
+  /* Уменьшает отступы секций на телефонах. */
   .content-section {
-    padding: 42px 0;
+    padding: 42px 0; /* Делает вертикальные отступы секций меньше. */
   }
 
+  /* Уменьшает верхний отступ страницы породы на телефонах. */
   .breed-page {
-    padding-top: 28px;
+    padding-top: 28px; /* Делает верхний отступ меньше. */
   }
 }
